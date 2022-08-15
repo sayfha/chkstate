@@ -16,11 +16,11 @@ export default class App extends Component {
     ]
   }
   handlDelete=(x)=>this.setState({todose:this.state.todose.filter(el=>el.id!==x)})
-
+  handelComplete=(y)=>{this.setState({todose:this.state.todose.map(el=>el.id===y?{...el,isdone:!el.isdone}:el)})}
   render() {
     return (
       <div>
-        <Todo saif={this.state.todose} del={this.handlDelete} />
+        <Todo saif={this.state.todose} del={this.handlDelete} comp={this.handelComplete} />
       </div>
     )
   }
