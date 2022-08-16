@@ -3,7 +3,7 @@ import React from 'react'
 const Todos = ({task,del,comp}) => {
   
   return (
-    <div>
+    <div className={task.isdone ? `complete` : ``}>
       <h1>
         {task.task}
       </h1>
